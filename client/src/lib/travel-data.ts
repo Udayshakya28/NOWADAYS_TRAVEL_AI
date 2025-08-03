@@ -108,6 +108,78 @@ export const destinations: Destination[] = [
     rating: 4.9,
     reviewCount: 1800,
     imageUrl: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "mumbai",
+    name: "Mumbai",
+    country: "India",
+    averageFlightCost: 680,
+    averageHotelCost: 120,
+    description: "Financial capital of India, perfect for business meetings and corporate events",
+    category: "Business Hub",
+    rating: 4.6,
+    reviewCount: 1650,
+    imageUrl: "https://images.unsplash.com/photo-1529253355930-ddbe423a2ac7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "delhi",
+    name: "New Delhi",
+    country: "India",
+    averageFlightCost: 720,
+    averageHotelCost: 100,
+    description: "Capital city with rich history, perfect for cultural corporate experiences",
+    category: "Cultural Heritage",
+    rating: 4.5,
+    reviewCount: 1420,
+    imageUrl: "https://images.unsplash.com/photo-1587474260584-136574528ed5?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "bangalore",
+    name: "Bangalore",
+    country: "India",
+    averageFlightCost: 650,
+    averageHotelCost: 95,
+    description: "Silicon Valley of India, ideal for tech partnerships and innovation",
+    category: "Tech Hub",
+    rating: 4.7,
+    reviewCount: 1280,
+    imageUrl: "https://images.unsplash.com/photo-1596176530529-78163a4f7af2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "goa",
+    name: "Goa",
+    country: "India",
+    averageFlightCost: 580,
+    averageHotelCost: 80,
+    description: "Beach paradise with vibrant nightlife, perfect for group adventures",
+    category: "Beach & Party",
+    rating: 4.8,
+    reviewCount: 2200,
+    imageUrl: "https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "kerala",
+    name: "Kerala",
+    country: "India",
+    averageFlightCost: 620,
+    averageHotelCost: 75,
+    description: "God's Own Country with backwaters and hill stations for group retreats",
+    category: "Nature Escape",
+    rating: 4.9,
+    reviewCount: 1850,
+    imageUrl: "https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "rajasthan",
+    name: "Rajasthan",
+    country: "India",
+    averageFlightCost: 590,
+    averageHotelCost: 110,
+    description: "Royal palaces and desert adventures, perfect for luxury group experiences",
+    category: "Royal Heritage",
+    rating: 4.8,
+    reviewCount: 1950,
+    imageUrl: "https://images.unsplash.com/photo-1528739495328-4e4b2d6d7f75?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
   }
 ];
 
