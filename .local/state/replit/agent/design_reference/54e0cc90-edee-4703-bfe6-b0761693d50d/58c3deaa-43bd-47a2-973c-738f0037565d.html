@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelFlow AI - Corporate Travel Itinerary Platform</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        primary: {
+                            50: '#eff6ff',
+                            500: '#3b82f6',
+                            600: '#2563eb',
+                            700: '#1d4ed8',
+                        }
+                    }
+                }
+            }
+        };
+    </script>
+</head>
+<body class="font-inter bg-slate-50 text-slate-900">
+    <!-- @COMPONENT: Header -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex items-center space-x-2">
+                        <i class="fas fa-route text-primary-600 text-2xl"></i>
+                        <span class="text-xl font-bold text-slate-900">TravelFlow AI</span>
+                        <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full font-medium">Beta</span>
+                    </div>
+                    <nav class="hidden md:flex space-x-6">
+                        <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">Dashboard</a>
+                        <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">Itineraries</a>
+                        <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">Budget Tools</a>
+                        <a href="#" class="text-slate-600 hover:text-slate-900 font-medium">Reports</a>
+                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="text-slate-600 hover:text-slate-900">
+                        <i class="fas fa-bell"></i>
+                    </button>
+                    <div class="w-8 h-8 bg-primary-600 rounded-full flex items-center justify-center">
+                        <span class="text-white text-sm font-medium">JD</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero Section -->
+    <section class="bg-gradient-to-br from-primary-50 to-white py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-bold text-slate-900 mb-4">
+                    Corporate Travel Made <span class="text-primary-600">Effortless</span>
+                </h1>
+                <p class="text-xl text-slate-600 max-w-3xl mx-auto">
+                    AI-powered itinerary planning, budget estimation, and travel coordination for corporate events and business trips.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-emerald-600"></i>
+                        <span class="text-slate-700">Multi city itinerary builder</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-emerald-600"></i>
+                        <span class="text-slate-700">Real-time budget estimation</span>
+                    </div>
+                    <div class="flex items-center space-x-3">
+                        <i class="fas fa-check-circle text-emerald-600"></i>
+                        <span class="text-slate-700">Smart hotel & flight comparison</span>
+                    </div>
+                    <button class="bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors">
+                        Start Planning Now
+                    </button>
+                </div>
+                <div class="relative">
+                    <!-- A professional business traveler using a laptop at an airport -->
+                    <img src="https://images.unsplash.com/photo-1556761175-b413da4baf72?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Business traveler using laptop at airport" 
+                         class="rounded-xl shadow-2xl" />
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero Section -->
+
+    <!-- @COMPONENT: Quick Start Widget -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Plan Your Next Corporate Trip</h2>
+                <p class="text-slate-600">Get started in seconds with our AI-powered travel assistant</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-xl border border-slate-200 p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Departure City</label>
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="San Francisco, CA" 
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" 
+                                   data-mock="true" />
+                            <i class="fas fa-plane-departure absolute right-3 top-3 text-slate-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Destination Cities</label>
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="New York, London..." 
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" 
+                                   data-mock="true" />
+                            <i class="fas fa-map-marker-alt absolute right-3 top-3 text-slate-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Travel Dates</label>
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="Mar 15 - Mar 22" 
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" 
+                                   data-mock="true" />
+                            <i class="fas fa-calendar absolute right-3 top-3 text-slate-400"></i>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-slate-700 mb-2">Travelers</label>
+                        <div class="relative">
+                            <input type="text" 
+                                   placeholder="12 people" 
+                                   class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500" 
+                                   data-mock="true" />
+                            <i class="fas fa-users absolute right-3 top-3 text-slate-400"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button class="bg-primary-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-700 transition-colors flex items-center justify-center space-x-2" 
+                            data-event="click:generateItinerary">
+                        <i class="fas fa-magic"></i>
+                        <span>Generate Smart Itinerary</span>
+                    </button>
+                    <button class="border border-slate-300 text-slate-700 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-colors flex items-center justify-center space-x-2">
+                        <i class="fas fa-calculator"></i>
+                        <span>Estimate Budget Only</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Quick Start Widget -->
+
+    <!-- @COMPONENT: Live Itinerary Builder -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Interactive Itinerary Builder</h2>
+                <p class="text-slate-600">Drag, drop, and customize your perfect business travel plan</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <!-- Timeline Column -->
+                <div class="lg:col-span-2">
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <div class="flex items-center justify-between mb-6">
+                            <h3 class="text-lg font-semibold text-slate-900">7-Day Corporate Trip</h3>
+                            <div class="flex items-center space-x-2">
+                                <span class="text-sm text-slate-600">Total Budget:</span>
+                                <span class="text-xl font-bold text-primary-600" data-bind="trip.totalBudget">$24,580</span>
+                            </div>
+                        </div>
+
+                        <!-- @MAP: days.map(day => ( -->
+                        <div class="space-y-4">
+                            <!-- Day 1 -->
+                            <div class="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow" data-day="1">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold">1</div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900">Monday, March 15</h4>
+                                            <p class="text-sm text-slate-600">San Francisco → New York</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-slate-900">$890 per person</p>
+                                        <p class="text-xs text-slate-500">Flight + Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-plane text-primary-600"></i>
+                                            <span class="text-sm font-medium">Flight UA 123</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">SFO → JFK • 6:30 AM - 3:15 PM</p>
+                                    </div>
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-bed text-primary-600"></i>
+                                            <span class="text-sm font-medium">Marriott Downtown</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">Check-in 4:00 PM • $320/night</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 2 -->
+                            <div class="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow" data-day="2">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold">2</div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900">Tuesday, March 16</h4>
+                                            <p class="text-sm text-slate-600">New York Meetings</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-slate-900">$185 per person</p>
+                                        <p class="text-xs text-slate-500">Meals + Transport</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-coffee text-primary-600"></i>
+                                            <span class="text-sm font-medium">Team Breakfast</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">8:00 AM • The Plaza</p>
+                                    </div>
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-handshake text-primary-600"></i>
+                                            <span class="text-sm font-medium">Client Meeting</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">10:00 AM • Goldman Sachs</p>
+                                    </div>
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-utensils text-primary-600"></i>
+                                            <span class="text-sm font-medium">Team Dinner</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">7:00 PM • Le Bernardin</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Day 3 -->
+                            <div class="border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow" data-day="3">
+                                <div class="flex items-center justify-between mb-3">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-8 h-8 bg-primary-600 text-white rounded-full flex items-center justify-center text-sm font-semibold">3</div>
+                                        <div>
+                                            <h4 class="font-semibold text-slate-900">Wednesday, March 17</h4>
+                                            <p class="text-sm text-slate-600">New York → London</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-medium text-slate-900">$1,240 per person</p>
+                                        <p class="text-xs text-slate-500">Flight + Hotel</p>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-plane text-primary-600"></i>
+                                            <span class="text-sm font-medium">Flight BA 183</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">JFK → LHR • 9:15 PM - 8:35 AM+1</p>
+                                    </div>
+                                    <div class="bg-slate-50 rounded-lg p-3">
+                                        <div class="flex items-center space-x-2 mb-2">
+                                            <i class="fas fa-bed text-primary-600"></i>
+                                            <span class="text-sm font-medium">Hilton London</span>
+                                        </div>
+                                        <p class="text-xs text-slate-600">Check-in 2:00 PM • £280/night</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- @END_MAP )) -->
+
+                        <div class="mt-6 flex justify-center">
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm flex items-center space-x-1">
+                                <i class="fas fa-plus"></i>
+                                <span>Add More Days</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sidebar -->
+                <div class="space-y-6">
+                    <!-- Budget Summary -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">Budget Breakdown</h3>
+                        <div class="space-y-3">
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Flights</span>
+                                <span class="font-medium" data-bind="budget.flights">$18,240</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Hotels</span>
+                                <span class="font-medium" data-bind="budget.hotels">$4,560</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Meals</span>
+                                <span class="font-medium" data-bind="budget.meals">$1,320</span>
+                            </div>
+                            <div class="flex justify-between">
+                                <span class="text-slate-600">Transport</span>
+                                <span class="font-medium" data-bind="budget.transport">$460</span>
+                            </div>
+                            <hr class="my-3">
+                            <div class="flex justify-between text-lg font-semibold">
+                                <span>Total</span>
+                                <span class="text-primary-600" data-bind="budget.total">$24,580</span>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4 p-3 bg-emerald-50 rounded-lg">
+                            <div class="flex items-center space-x-2">
+                                <i class="fas fa-check-circle text-emerald-600"></i>
+                                <span class="text-sm font-medium text-emerald-800">Within Budget</span>
+                            </div>
+                            <p class="text-xs text-emerald-700 mt-1">$2,420 under your $27,000 limit</p>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">Quick Actions</h3>
+                        <div class="space-y-3">
+                            <button class="w-full bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors">
+                                <i class="fas fa-download mr-2"></i>
+                                Export Itinerary
+                            </button>
+                            <button class="w-full border border-slate-300 text-slate-700 px-4 py-2 rounded-lg font-medium hover:bg-slate-50 transition-colors">
+                                <i class="fas fa-share mr-2"></i>
+                                Share with Team
+                            </button>
+                            <button class="w-full border border-slate-300 text-slate-700 px-4 py-2 rounded-lg font-medium hover:bg-slate-50 transition-colors">
+                                <i class="fas fa-calendar-plus mr-2"></i>
+                                Add to Calendar
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- AI Suggestions -->
+                    <div class="bg-white rounded-xl shadow-lg p-6">
+                        <h3 class="text-lg font-semibold text-slate-900 mb-4">AI Suggestions</h3>
+                        <div class="space-y-3">
+                            <div class="p-3 bg-blue-50 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <i class="fas fa-lightbulb text-blue-600 mt-1"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-blue-900">Save $320 on flights</p>
+                                        <p class="text-xs text-blue-700">Consider departing Tuesday instead of Monday</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-3 bg-purple-50 rounded-lg">
+                                <div class="flex items-start space-x-2">
+                                    <i class="fas fa-map-marker-alt text-purple-600 mt-1"></i>
+                                    <div>
+                                        <p class="text-sm font-medium text-purple-900">Better hotel option</p>
+                                        <p class="text-xs text-purple-700">Hyatt nearby is 15% cheaper with same rating</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Live Itinerary Builder -->
+
+    <!-- @COMPONENT: Destination Showcase -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Popular Business Destinations</h2>
+                <p class="text-slate-600">Discover the best corporate travel destinations with AI-powered insights</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- New York -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A stunning skyline view of New York City with Empire State Building -->
+                    <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="New York City skyline with Empire State Building" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">New York</h3>
+                            <span class="text-sm bg-emerald-100 text-emerald-800 px-2 py-1 rounded-full">Popular</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Perfect for financial meetings and corporate events</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$340</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$280/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.8</span>
+                                <span class="text-xs text-slate-500">(2.1k reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- London -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A panoramic view of London with Big Ben and Thames River -->
+                    <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="London cityscape with Big Ben and Thames River" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">London</h3>
+                            <span class="text-sm bg-blue-100 text-blue-800 px-2 py-1 rounded-full">Trending</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Gateway to European business opportunities</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$620</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$320/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.7</span>
+                                <span class="text-xs text-slate-500">(1.8k reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tokyo -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A modern view of Tokyo skyline with Mount Fuji in background -->
+                    <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Tokyo skyline with Mount Fuji in background" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">Tokyo</h3>
+                            <span class="text-sm bg-purple-100 text-purple-800 px-2 py-1 rounded-full">Tech Hub</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Innovation center for technology partnerships</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$890</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$240/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.9</span>
+                                <span class="text-xs text-slate-500">(1.5k reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Singapore -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A futuristic view of Singapore Marina Bay Sands and city skyline -->
+                    <img src="https://images.unsplash.com/photo-1525625293386-3f8f99389edd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Singapore Marina Bay Sands and modern skyline" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">Singapore</h3>
+                            <span class="text-sm bg-green-100 text-green-800 px-2 py-1 rounded-full">Asia Gateway</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Strategic hub for Asian market expansion</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$1,120</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$180/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.8</span>
+                                <span class="text-xs text-slate-500">(980 reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Dubai -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A luxurious view of Dubai skyline with Burj Khalifa -->
+                    <img src="https://images.unsplash.com/photo-1512453979798-5ea266f8880c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=400" 
+                         alt="Dubai skyline featuring Burj Khalifa tower" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">Dubai</h3>
+                            <span class="text-sm bg-orange-100 text-orange-800 px-2 py-1 rounded-full">Luxury</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Premium destination for executive meetings</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$780</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$350/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.6</span>
+                                <span class="text-xs text-slate-500">(1.2k reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Berlin -->
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow cursor-pointer">
+                    <!-- A historic view of Berlin with Brandenburg Gate -->
+                    <img src="https://pixabay.com/get/g81f6c05ad9c1d3f02ace606ec312d04f5ebf59b401d311bdcb307fde072585e7ab3f3b7be2d5acd9b8777b2674b91aed406506966f3073e5bc6266f82e9be0d5_1280.jpg" 
+                         alt="Berlin cityscape with Brandenburg Gate" 
+                         class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center justify-between mb-3">
+                            <h3 class="text-xl font-semibold text-slate-900">Berlin</h3>
+                            <span class="text-sm bg-indigo-100 text-indigo-800 px-2 py-1 rounded-full">Startup Hub</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Thriving ecosystem for innovation and partnerships</p>
+                        <div class="grid grid-cols-2 gap-4 mb-4">
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Flight</p>
+                                <p class="font-semibold text-slate-900">$520</p>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500">Avg. Hotel</p>
+                                <p class="font-semibold text-slate-900">$160/night</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <div class="flex items-center space-x-1">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <span class="text-sm font-medium">4.5</span>
+                                <span class="text-xs text-slate-500">(750 reviews)</span>
+                            </div>
+                            <button class="text-primary-600 hover:text-primary-700 font-medium text-sm">
+                                View Details <i class="fas fa-arrow-right ml-1"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Destination Showcase -->
+
+    <!-- @COMPONENT: Feature Comparison -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Why Choose TravelFlow AI?</h2>
+                <p class="text-slate-600">Compare traditional planning methods with our AI-powered solution</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <!-- Traditional Method -->
+                <div class="bg-white rounded-xl shadow-lg p-8">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-clock text-red-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">Traditional Planning</h3>
+                        <p class="text-slate-600">Manual research and coordination</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">20+ hours per trip</p>
+                                <p class="text-sm text-slate-600">Manual research across multiple sites</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Fragmented information</p>
+                                <p class="text-sm text-slate-600">Scattered emails, bookings, and documents</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Budget surprises</p>
+                                <p class="text-sm text-slate-600">Hidden costs discovered during booking</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-times-circle text-red-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Limited optimization</p>
+                                <p class="text-sm text-slate-600">No AI suggestions for cost savings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-red-50 rounded-lg">
+                        <div class="text-center">
+                            <p class="text-red-800 font-semibold">Average Time: 20+ hours</p>
+                            <p class="text-red-600 text-sm">Potential overspend: 15-30%</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TravelFlow AI Method -->
+                <div class="bg-white rounded-xl shadow-lg p-8 border-2 border-primary-200">
+                    <div class="text-center mb-6">
+                        <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i class="fas fa-magic text-primary-600 text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-900">TravelFlow AI</h3>
+                        <p class="text-slate-600">AI-powered intelligent planning</p>
+                    </div>
+                    
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">5 minutes to plan</p>
+                                <p class="text-sm text-slate-600">AI generates optimized itineraries instantly</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Unified dashboard</p>
+                                <p class="text-sm text-slate-600">All bookings, budgets, and plans in one place</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Real-time budget tracking</p>
+                                <p class="text-sm text-slate-600">Live cost estimates with instant updates</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i class="fas fa-check-circle text-emerald-500 mt-1"></i>
+                            <div>
+                                <p class="font-medium text-slate-900">Smart cost optimization</p>
+                                <p class="text-sm text-slate-600">AI finds the best deals and suggests savings</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-primary-50 rounded-lg">
+                        <div class="text-center">
+                            <p class="text-primary-800 font-semibold">Average Time: 5 minutes</p>
+                            <p class="text-primary-600 text-sm">Average savings: 20-35%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Stats Row -->
+            <div class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary-600 mb-2">400x</div>
+                    <div class="text-sm text-slate-600">Faster planning</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary-600 mb-2">25%</div>
+                    <div class="text-sm text-slate-600">Average cost savings</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary-600 mb-2">400K+</div>
+                    <div class="text-sm text-slate-600">Vetted venues</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-3xl font-bold text-primary-600 mb-2">99.9%</div>
+                    <div class="text-sm text-slate-600">Uptime guarantee</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Feature Comparison -->
+
+    <!-- @COMPONENT: Integration Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Seamless Integration with Your Workflow</h2>
+                <p class="text-slate-600">Connect with the tools your team already uses</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <!-- A professional showing travel booking interface on a laptop screen -->
+                    <img src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600" 
+                         alt="Professional using travel booking interface on laptop" 
+                         class="rounded-xl shadow-lg" />
+                </div>
+                <div class="space-y-8">
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-slack text-blue-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-2">Slack Integration</h3>
+                            <p class="text-slate-600">Get itinerary updates and approvals directly in your team channels</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-google text-red-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-2">Google Workspace</h3>
+                            <p class="text-slate-600">Sync calendars, share documents, and collaborate on travel plans</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center">
+                            <i class="fab fa-microsoft text-purple-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-2">Microsoft 365</h3>
+                            <p class="text-slate-600">Seamless integration with Outlook, Teams, and SharePoint</p>
+                        </div>
+                    </div>
+                    
+                    <div class="flex items-start space-x-4">
+                        <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-chart-line text-green-600 text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-slate-900 mb-2">Expense Management</h3>
+                            <p class="text-slate-600">Connect with Expensify, Concur, and other expense platforms</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Integration Section -->
+
+    <!-- @COMPONENT: Testimonials -->
+    <section class="py-16 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-slate-900 mb-4">Trusted by Leading Companies</h2>
+                <p class="text-slate-600">See what our customers say about TravelFlow AI</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-slate-600">(5.0)</span>
+                    </div>
+                    <p class="text-slate-700 mb-4">"TravelFlow AI reduced our corporate travel planning time from days to minutes. The budget insights are incredibly accurate."</p>
+                    <div class="flex items-center">
+                        <!-- A professional headshot of a female executive -->
+                        <img src="https://pixabay.com/get/g979415651523b5cacda60fbf153e68886567c2dcccd9f226088ce4d721369456e77c70ac45a9212adfb6ef63b711a89c72ca297c34bb6fa8a560ad7bc8fc0568_1280.jpg" 
+                             alt="Professional headshot of female executive" 
+                             class="w-12 h-12 rounded-full mr-3" />
+                        <div>
+                            <p class="font-semibold text-slate-900">Sarah Chen</p>
+                            <p class="text-sm text-slate-600">VP Operations, TechCorp</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-slate-600">(5.0)</span>
+                    </div>
+                    <p class="text-slate-700 mb-4">"The AI suggestions saved us over $50,000 on our quarterly business trips. The interface is intuitive and powerful."</p>
+                    <div class="flex items-center">
+                        <!-- A professional headshot of a male business executive -->
+                        <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                             alt="Professional headshot of male business executive" 
+                             class="w-12 h-12 rounded-full mr-3" />
+                        <div>
+                            <p class="font-semibold text-slate-900">Michael Rodriguez</p>
+                            <p class="text-sm text-slate-600">CFO, GlobalFinance</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-yellow-400">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <span class="ml-2 text-sm text-slate-600">(5.0)</span>
+                    </div>
+                    <p class="text-slate-700 mb-4">"Finally, a travel platform built for modern businesses. The drag-and-drop itinerary builder is a game changer."</p>
+                    <div class="flex items-center">
+                        <!-- A professional headshot of a diverse female manager -->
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=100&h=100" 
+                             alt="Professional headshot of diverse female manager" 
+                             class="w-12 h-12 rounded-full mr-3" />
+                        <div>
+                            <p class="font-semibold text-slate-900">Priya Patel</p>
+                            <p class="text-sm text-slate-600">Operations Manager, StartupHub</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- @COMPONENT: CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-600 to-primary-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4">Ready to Transform Your Corporate Travel?</h2>
+            <p class="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
+                Join hundreds of companies that have streamlined their business travel with TravelFlow AI
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                <button class="bg-white text-primary-600 px-8 py-4 rounded-lg font-semibold hover:bg-primary-50 transition-colors shadow-lg">
+                    Start Free Trial
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg font-semibold hover:bg-white hover:text-primary-600 transition-colors">
+                    Schedule Demo
+                </button>
+            </div>
+            
+            <div class="mt-8 flex items-center justify-center space-x-8 text-primary-200">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check"></i>
+                    <span>No credit card required</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check"></i>
+                    <span>14-day free trial</span>
+                </div>
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check"></i>
+                    <span>Cancel anytime</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: CTA Section -->
+
+    <!-- @COMPONENT: Footer -->
+    <footer class="bg-slate-900 text-slate-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center space-x-2 mb-4">
+                        <i class="fas fa-route text-primary-500 text-2xl"></i>
+                        <span class="text-xl font-bold text-white">TravelFlow AI</span>
+                    </div>
+                    <p class="text-slate-400 mb-4 max-w-md">
+                        AI-powered corporate travel planning that saves time, reduces costs, and eliminates the hassle of business trip coordination.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="text-slate-400 hover:text-white transition-colors">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Product</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Features</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Pricing</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">API</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Integrations</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="text-white font-semibold mb-4">Company</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">About</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Careers</a></li>
+                        <li><a href="#" class="text-slate-400 hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400">&copy; 2024 TravelFlow AI. All rights reserved.</p>
+                <div class="flex space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-slate-400 hover:text-white transition-colors">Terms of Service</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <script>
+        // Simple interactive functionality for demonstration
+        (function() {
+            // TODO: Implement business logic, API calls, or state management
+            
+            // Simulate itinerary generation
+            const generateBtn = document.querySelector('[data-event="click:generateItinerary"]');
+            if (generateBtn) {
+                generateBtn.addEventListener('click', function() {
+                    // Simulate loading state
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Generating...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check mr-2"></i>Itinerary Generated!';
+                        setTimeout(() => {
+                            this.innerHTML = '<i class="fas fa-magic mr-2"></i>Generate Smart Itinerary';
+                            this.disabled = false;
+                        }, 2000);
+                    }, 3000);
+                });
+            }
+
+            // Add hover effects to destination cards
+            const destinationCards = document.querySelectorAll('.grid .bg-white.rounded-xl.shadow-lg.overflow-hidden');
+            destinationCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-4px)';
+                    this.style.transition = 'transform 0.3s ease';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                });
+            });
+
+            // Simulate budget updates
+            const budgetElements = document.querySelectorAll('[data-bind^="budget."]');
+            setInterval(() => {
+                budgetElements.forEach(el => {
+                    const currentValue = parseInt(el.textContent.replace(/[$,]/g, ''));
+                    const variation = Math.floor(Math.random() * 100) - 50; // ±$50 variation
+                    const newValue = currentValue + variation;
+                    el.textContent = '$' + newValue.toLocaleString();
+                });
+            }, 10000); // Update every 10 seconds for demo
+        })();
+    </script>
+</body>
+</html>
