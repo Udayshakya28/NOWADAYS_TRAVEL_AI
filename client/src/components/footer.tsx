@@ -1,4 +1,4 @@
-import { Route } from "lucide-react";
+import nowadaysLogo from "@assets/image_1754246748647.png";
 
 export default function Footer() {
   const footerLinks = {
@@ -27,9 +27,12 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div className="col-span-1 md:col-span-2">
-            <div className="flex items-center space-x-2 mb-4">
-              <Route className="text-primary-500 text-2xl" />
-              <span className="text-xl font-bold text-white">TravelFlow AI</span>
+            <div className="flex items-center space-x-3 mb-4">
+              <img src={nowadaysLogo} alt="Nowadays" className="h-8 w-auto" />
+              <div>
+                <span className="text-xl font-bold text-white">Nowadays Travel AI</span>
+                <div className="text-xs text-slate-400 -mt-1">From idea to itinerary</div>
+              </div>
             </div>
             <p className="text-slate-400 mb-4 max-w-md">
               AI-powered group travel planning that saves time, reduces costs, and eliminates the hassle of coordinating trips for any group size or purpose.
@@ -76,7 +79,7 @@ export default function Footer() {
         </div>
         
         <div className="border-t border-slate-800 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-slate-400">&copy; 2024 TravelFlow AI. All rights reserved.</p>
+          <p className="text-slate-400">&copy; 2024 Nowadays Travel AI. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <a href="#" className="text-slate-400 hover:text-white transition-colors">Privacy Policy</a>
             <a href="#" className="text-slate-400 hover:text-white transition-colors">Terms of Service</a>

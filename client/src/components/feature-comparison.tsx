@@ -59,7 +59,7 @@ export default function FeatureComparison() {
     <section className="py-16 bg-slate-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose TravelFlow AI?</h2>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Why Choose Nowadays Travel AI?</h2>
           <p className="text-slate-600">Compare traditional planning methods with our AI-powered solution for any group size or trip type</p>
         </div>
 
@@ -96,14 +96,14 @@ export default function FeatureComparison() {
             </CardContent>
           </Card>
 
-          {/* TravelFlow AI Method */}
+          {/* Nowadays Travel AI Method */}
           <Card className="shadow-lg border-2 border-primary-200">
             <CardContent className="p-8">
               <div className="text-center mb-6">
                 <div className="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <Sparkles className="text-primary-600 text-2xl" />
                 </div>
-                <h3 className="text-xl font-bold text-slate-900">TravelFlow AI</h3>
+                <h3 className="text-xl font-bold text-slate-900">Nowadays Travel AI</h3>
                 <p className="text-slate-600">AI-powered intelligent planning</p>
               </div>
               

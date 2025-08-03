@@ -13,7 +13,7 @@ export default function CTASection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h2 className="text-3xl font-bold text-white mb-4">Ready to Transform Your Group Travel?</h2>
         <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-          Join thousands of users who have streamlined their group travel planning with TravelFlow AI
+          Join thousands of users who have streamlined their group travel planning with Nowadays Travel AI
         </p>
         
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">

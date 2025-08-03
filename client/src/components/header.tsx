@@ -1,4 +1,5 @@
-import { Bell, Route } from "lucide-react";
+import { Bell } from "lucide-react";
+import nowadaysLogo from "@assets/image_1754246748647.png";
 
 export default function Header() {
   return (
@@ -6,9 +7,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           <div className="flex items-center space-x-8">
-            <div className="flex items-center space-x-2">
-              <Route className="text-primary-600 text-2xl" />
-              <span className="text-xl font-bold text-slate-900">TravelFlow AI</span>
+            <div className="flex items-center space-x-3">
+              <img src={nowadaysLogo} alt="Nowadays" className="h-8 w-auto" />
+              <div>
+                <span className="text-xl font-bold text-slate-900">Nowadays Travel AI</span>
+                <div className="text-xs text-slate-600 -mt-1">From idea to itinerary</div>
+              </div>
               <span className="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded-full font-medium">
                 Beta
               </span>
