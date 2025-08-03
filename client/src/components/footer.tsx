@@ -32,7 +32,7 @@ export default function Footer() {
               <span className="text-xl font-bold text-white">TravelFlow AI</span>
             </div>
             <p className="text-slate-400 mb-4 max-w-md">
-              AI-powered corporate travel planning that saves time, reduces costs, and eliminates the hassle of business trip coordination.
+              AI-powered group travel planning that saves time, reduces costs, and eliminates the hassle of coordinating trips for any group size or purpose.
             </p>
             <div className="flex space-x-4">
               {socialLinks.map((link) => (

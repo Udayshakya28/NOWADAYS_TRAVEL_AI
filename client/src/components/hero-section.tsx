@@ -7,10 +7,10 @@ export default function HeroSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
-            Corporate Travel Made <span className="text-primary-600">Effortless</span>
+            Group Travel Made <span className="text-primary-600">Effortless</span>
           </h1>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            AI-powered itinerary planning, budget estimation, and travel coordination for corporate events and business trips.
+            AI-powered itinerary planning, budget estimation, and travel coordination for corporate events, business trips, and group adventures with friends.
           </p>
         </div>
         
@@ -18,15 +18,15 @@ export default function HeroSection() {
           <div className="space-y-6">
             <div className="flex items-center space-x-3">
               <Check className="h-5 w-5 text-emerald-600" />
-              <span className="text-slate-700">Multi city itinerary builder</span>
+              <span className="text-slate-700">Multi-city itinerary builder for any group size</span>
             </div>
             <div className="flex items-center space-x-3">
               <Check className="h-5 w-5 text-emerald-600" />
-              <span className="text-slate-700">Real-time budget estimation</span>
+              <span className="text-slate-700">Real-time budget splitting & estimation</span>
             </div>
             <div className="flex items-center space-x-3">
               <Check className="h-5 w-5 text-emerald-600" />
-              <span className="text-slate-700">Smart hotel & flight comparison</span>
+              <span className="text-slate-700">Smart recommendations for groups & teams</span>
             </div>
             <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white">
               Start Planning Now

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Plane, MapPin, Calendar, Users, Sparkles, Calculator } from "lucide-react";
+import { Plane, MapPin, Calendar, Users, Sparkles, Calculator, Briefcase, Heart, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -13,7 +13,8 @@ export default function QuickStartWidget() {
     destinationCities: ["New York", "London"],
     startDate: "2024-03-15",
     endDate: "2024-03-22",
-    travelers: 12
+    travelers: 12,
+    tripType: "mixed"
   });
 
   const { generateItinerary, isGenerating } = useItinerary();
@@ -28,7 +29,8 @@ export default function QuickStartWidget() {
       destinationCities: formData.destinationCities,
       startDate: formData.startDate,
       endDate: formData.endDate,
-      travelers: formData.travelers
+      travelers: formData.travelers,
+      tripType: formData.tripType || "mixed"
     };
 
     if (type === 'itinerary') {
@@ -42,12 +44,67 @@ export default function QuickStartWidget() {
     <section className="py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-slate-900 mb-4">Plan Your Next Corporate Trip</h2>
-          <p className="text-slate-600">Get started in seconds with our AI-powered travel assistant</p>
+          <h2 className="text-3xl font-bold text-slate-900 mb-4">Plan Your Next Group Trip</h2>
+          <p className="text-slate-600">Whether it's business travel or adventures with friends - get started in seconds with our AI-powered travel assistant</p>
         </div>
 
         <Card className="max-w-4xl mx-auto shadow-xl border-slate-200">
           <CardContent className="p-8">
+            {/* Trip Type Selector */}
+            <div className="mb-6">
+              <Label className="text-sm font-medium text-slate-700 mb-3 block">Trip Type</Label>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                <div 
+                  className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                    formData.tripType === 'corporate' 
+                      ? 'border-primary-500 bg-primary-50' 
+                      : 'border-slate-200 hover:border-slate-300'
+                  }`}
+                  onClick={() => setFormData({ ...formData, tripType: 'corporate' })}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Briefcase className="h-5 w-5 text-primary-600" />
+                    <div>
+                      <h3 className="font-medium text-slate-900">Corporate</h3>
+                      <p className="text-xs text-slate-600">Business meetings & events</p>
+                    </div>
+                  </div>
+                </div>
+                <div 
+                  className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                    formData.tripType === 'friends' 
+                      ? 'border-primary-500 bg-primary-50' 
+                      : 'border-slate-200 hover:border-slate-300'
+                  }`}
+                  onClick={() => setFormData({ ...formData, tripType: 'friends' })}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Heart className="h-5 w-5 text-red-500" />
+                    <div>
+                      <h3 className="font-medium text-slate-900">Friends</h3>
+                      <p className="text-xs text-slate-600">Group adventures & hangouts</p>
+                    </div>
+                  </div>
+                </div>
+                <div 
+                  className={`border-2 rounded-lg p-4 cursor-pointer transition-all ${
+                    formData.tripType === 'mixed' 
+                      ? 'border-primary-500 bg-primary-50' 
+                      : 'border-slate-200 hover:border-slate-300'
+                  }`}
+                  onClick={() => setFormData({ ...formData, tripType: 'mixed' })}
+                >
+                  <div className="flex items-center space-x-3">
+                    <Globe className="h-5 w-5 text-green-600" />
+                    <div>
+                      <h3 className="font-medium text-slate-900">Mixed</h3>
+                      <p className="text-xs text-slate-600">Business + leisure combo</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
               <div>
                 <Label htmlFor="departure" className="text-sm font-medium text-slate-700 mb-2">

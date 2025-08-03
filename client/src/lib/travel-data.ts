@@ -72,6 +72,42 @@ export const destinations: Destination[] = [
     rating: 4.5,
     reviewCount: 750,
     imageUrl: "https://images.unsplash.com/photo-1567515004624-219c11d31f2e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "amsterdam",
+    name: "Amsterdam",
+    country: "Netherlands",
+    averageFlightCost: 580,
+    averageHotelCost: 190,
+    description: "Perfect for group adventures with canals, museums, and nightlife",
+    category: "Friends Favorite",
+    rating: 4.7,
+    reviewCount: 1350,
+    imageUrl: "https://images.unsplash.com/photo-1534351590666-13e3e96b5017?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "barcelona",
+    name: "Barcelona",
+    country: "Spain",
+    averageFlightCost: 490,
+    averageHotelCost: 140,
+    description: "Beach vibes, amazing food, and vibrant culture for groups",
+    category: "Beach & Culture",
+    rating: 4.8,
+    reviewCount: 2100,
+    imageUrl: "https://images.unsplash.com/photo-1539037116277-4db20889f2d4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
+  },
+  {
+    id: "bali",
+    name: "Bali",
+    country: "Indonesia",
+    averageFlightCost: 920,
+    averageHotelCost: 85,
+    description: "Tropical paradise perfect for group retreats and adventures",
+    category: "Tropical Escape",
+    rating: 4.9,
+    reviewCount: 1800,
+    imageUrl: "https://images.unsplash.com/photo-1537953773345-d172ccf13cf1?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=400"
   }
 ];
 
@@ -204,19 +240,27 @@ export const testimonials = [
     avatar: "https://images.unsplash.com/photo-1494790108755-2616b612b786?auto=format&fit=crop&w=100&h=100"
   },
   {
-    id: "michael-rodriguez",
-    name: "Michael Rodriguez",
-    title: "CFO, GlobalFinance",
-    content: "The AI suggestions saved us over $50,000 on our quarterly business trips. The interface is intuitive and powerful.",
+    id: "alex-thompson",
+    name: "Alex Thompson",
+    title: "Friend Group Organizer",
+    content: "Planning our 8-person trip to Europe was so easy! The budget splitting feature helped us stay on track and the itinerary suggestions were perfect.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=100&h=100"
+    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=100&h=100"
   },
   {
     id: "priya-patel",
     name: "Priya Patel",
     title: "Operations Manager, StartupHub",
-    content: "Finally, a travel platform built for modern businesses. The drag-and-drop itinerary builder is a game changer.",
+    content: "We use this for both work retreats and team social trips. The drag-and-drop itinerary builder works great for any group type.",
     rating: 5,
     avatar: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=100&h=100"
+  },
+  {
+    id: "jamie-wilson",
+    name: "Jamie Wilson",
+    title: "Adventure Enthusiast",
+    content: "My college friends and I planned an amazing Bali trip in under 10 minutes. The AI knew exactly what activities we'd love!",
+    rating: 5,
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=100&h=100"
   }
 ];

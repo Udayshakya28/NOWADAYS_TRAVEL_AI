@@ -1,10 +1,10 @@
-# TravelFlow AI - Corporate Travel Itinerary Platform
+# TravelFlow AI - Universal Group Travel Platform
 
 ## Overview
 
-TravelFlow AI is a comprehensive web application designed to streamline corporate travel planning through AI-powered automation. The platform transforms the traditional 20+ hour manual travel planning process into a 5-minute automated experience, providing intelligent itinerary generation, real-time budget tracking, and centralized travel management for business teams.
+TravelFlow AI is a comprehensive web application designed to streamline group travel planning through AI-powered automation. The platform serves both corporate teams and friend groups, transforming the traditional 20+ hour manual travel planning process into a 5-minute automated experience. It provides intelligent itinerary generation, real-time budget tracking and splitting, and centralized travel management for any group size or purpose.
 
-The application serves as a modern alternative to fragmented travel planning workflows by offering unified destination research, flight and hotel comparisons, budget optimization, and collaborative trip coordination all within a single dashboard.
+The application serves as a modern alternative to fragmented travel planning workflows by offering unified destination research, flight and hotel comparisons, budget optimization, and collaborative trip coordination - whether for business meetings, team retreats, or social adventures with friends.
 
 ## User Preferences
 

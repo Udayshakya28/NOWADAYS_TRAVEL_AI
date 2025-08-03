@@ -85,6 +85,7 @@ export const travelRequestSchema = z.object({
   endDate: z.string(),
   travelers: z.number(),
   budgetLimit: z.number().optional(),
+  tripType: z.enum(['corporate', 'friends', 'mixed']).default('mixed'),
 });
 
 export type Destination = z.infer<typeof destinationSchema>;
