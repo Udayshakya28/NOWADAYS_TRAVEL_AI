@@ -9,9 +9,12 @@ export default function HeroSection() {
           <h1 className="text-4xl font-bold text-slate-900 mb-4">
             Group Travel Made <span className="text-primary-600">Effortless</span>
           </h1>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             AI-powered itinerary planning, budget estimation, and travel coordination for corporate events, business trips, and group adventures with friends.
           </p>
+          <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white px-8 py-3 text-lg">
+            Start Free Trial
+          </Button>
         </div>
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -28,9 +31,6 @@ export default function HeroSection() {
               <Check className="h-5 w-5 text-emerald-600" />
               <span className="text-slate-700">Smart recommendations for groups & teams</span>
             </div>
-            <Button size="lg" className="bg-primary-600 hover:bg-primary-700 text-white">
-              Start Planning Now
-            </Button>
           </div>
           <div className="relative">
             <img 
